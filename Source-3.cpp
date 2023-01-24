@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-void Output(int array[],int number)//輸出陣列
+void Output(int array[],int number)//輸出用的函式
 {
 	for (int i = 0; i < number; i++) {
 		cout << array[i] << " ";
