@@ -1,46 +1,50 @@
 #include<iostream>
 using namespace std;
+
+void Output(int array[],int number)//è¼¸å‡ºé™£åˆ—
+{
+	for (int i = 0; i < number; i++) {
+		cout << array[i] << " ";
+	}
+	cout << endl;
+}
+
 int main()
 {
-int a[10] = {0,1,2,3,4,5,6,7,8,9};//°}¦C
-int odd_number = 0;//©_¼ÆÁ`©M
-int even_number = 0;//°¸¼ÆÁ`©M
+	int a[10] = { 0,1,2,3,4,5,6,7,8,9 };//é™£åˆ—
+	int odd_number = 0;//å¥‡æ•¸ç¸½å’Œ
+	int even_number = 0;//å¶æ•¸ç¸½å’Œ
 
-int odd[10] = {};//©_¼Æ°}¦C
-int o = 0;
-int even[10] = {};//°¸¼Æ°}¦C
-int e = 0;
+	int odd[10] = {};//å¥‡æ•¸é™£åˆ—
+	int o = 0;
+	int even[10] = {};//å¶æ•¸é™£åˆ—
+	int e = 0;
 
-for (int i = 0; i < 10; i++)
-{
-	if (a[i] % 2 == 1) //¦pªG¬O©_¼Æ
+	for (int i = 0; i < 10; i++)
 	{
-		odd_number += a[i];
-		odd[o] = a[i];
-		o++;
+		if (a[i] % 2 == 1) //å¦‚æžœæ˜¯å¥‡æ•¸
+		{
+			odd_number += a[i];
+			odd[o] = a[i];
+			o++;
+		}
+		else
+		{
+			even_number += a[i];
+			even[e] = a[i];
+			e++;
+		}
 	}
-	else
-	{
-		even_number += a[i];
-		even[e] = a[i];
-		e++;
-	}
-}
 
-int minus = odd_number - even_number;//©_¼Æ-°¸¼Æ«áªºµ²ªG
-cout << "©_¼ÆÁ`©M=" << odd_number<<endl;
-cout << "°¸¼ÆÁ`©M=" << even_number <<endl;
-cout << "©_¼ÆÁ`©M - °¸¼ÆÁ`©M=" << minus << endl;
+	int minus = odd_number - even_number;//å¥‡æ•¸-å¶æ•¸å¾Œçš„çµæžœ
+	cout << "å¥‡æ•¸ç¸½å’Œ=" << odd_number << endl;
+	cout << "å¶æ•¸ç¸½å’Œ=" << even_number << endl;
+	cout << "å¥‡æ•¸ç¸½å’Œ - å¶æ•¸ç¸½å’Œ=" << minus << endl;
 
-cout << "©_¼Æ­È°}¦C=";//¿é¥X°}¦C
-for (int i = 0; i <o ; i++) {
-	cout << odd[i]<<" ";
-	}
-cout << endl;
+	cout << "å¥‡æ•¸å€¼é™£åˆ—=";//è¼¸å‡ºå¥‡æ•¸å€¼é™£åˆ—
+	Output(odd, o);
 
-cout << "°¸¼Æ­È°}¦C=";
-for (int i = 0; i < e; i++) {
-	cout << even[i] << " ";
-}
-cout << endl;
+	cout << "å¶æ•¸å€¼é™£åˆ—=";//è¼¸å‡ºå¶æ•¸å€¼é™£åˆ—
+	Output(even, e);
+
 }
